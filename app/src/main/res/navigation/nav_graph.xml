@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/taskFragment">
+    <fragment
+        android:id="@+id/taskFragment"
+        android:name="com.charles.mvvmto_doapp.ui.tasks.TaskFragment"
+        android:label="Tasks">
+        <action
+            android:id="@+id/action_taskFragment_to_editTaskFragment"
+            app:destination="@id/editTaskFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/editTaskFragment"
+        android:name="com.charles.mvvmto_doapp.ui.editTask.EditTaskFragment"
+        android:label="(title)" >
+        <argument
+            android:name="task"
+            app:argType="com.charles.mvvmto_doapp.data.Task"
+            app:nullable="true"
+            android:defaultValue="@null" />
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
+</navigation>
